@@ -1,3 +1,35 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.hero-section {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');
+  background-repeat: none;
+  background-size: cover;
+  height: 100vh;
+}
+
+.hero-section-text {
+  text-align: center;
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-section h1 {
+  width: 100%;
+  background-color: hsla(360, 100%, 100%, 0.7);
+  text-align: center;
+  padding: 1em;
+}
+
+.hero-section h2 {
+  width: 100%;
+  background-color: hsla(301, 100%, 0%, 0.5);
+  text-align: center;
+  color: white;
+  padding: 1em;
+}
