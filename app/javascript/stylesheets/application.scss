@@ -8,31 +8,22 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   background-color: black;
   color: white;
   margin-top: 50px;
-  padding: 10px;
 }
 
 header img {
   width: 50px;
   height: 50px;
+  margin: 0.5em;
 }
 
 nav {
   width: 50%;
 }
-ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-}
 
-a {
-  text-decoration: none;
-  color: white;
-}
 * {
   width: 100%;
   margin: 0;
