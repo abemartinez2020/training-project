@@ -3,10 +3,14 @@ header
     nav
       ul.flex.justify-between.items-center.h-full.text-center.list-none.pr-3.5
         li.h-full.align-middle
-          =link_to "home", root_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
-        li.h-full.align-middle
-          =link_to "sign up", new_customer_registration_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
-        li.h-full.align-middle
-          =link_to "sign in",  customer_session_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
-        li.h-full.align-middle
-          =link_to "edit account",  customer_session_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
+           =link_to "home", root_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
+        - if customer_signed_in?
+          li.h-full.align-middle
+            =link_to "sign out",    destroy_customer_session_path, method: :delete, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
+          li.h-full.align-middle
+            =link_to "account",   edit_customer_registration_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
+        - else 
+          li.h-full.align-middle
+            =link_to "sign up", new_customer_registration_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
+          li.h-full.align-middle
+            =link_to "sign in",  customer_session_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
