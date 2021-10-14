@@ -1,16 +1,24 @@
-<h2>Resend confirmation instructions</h2>
+<div class="py-8 px-5  form-container bg-gray-200 w-9/12 mx-auto">
+    <h2 class="text-3xl mb-7">Welcome!</h2>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <p>Please check your email for the account confirmation link.</p>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+    <p>If you did not recieve a confirmation email, please follow the the Resend isntrctions below.</p>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+    <h2 class="mt-20">Resend confirmation instructions</h2>
 
-<%= render "devise/shared/links" %>
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field w-4/12 mb-10 mt-2">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Resend confirmation instructions", class:"py-2 mb-10 px-1 bg-black hover:bg-gray-800 w-3/12 text-white cursor-pointer" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+</div>
