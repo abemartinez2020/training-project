@@ -11,6 +11,8 @@ header
             =link_to "account",   edit_customer_registration_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
           li.h-full.align-middle.flex.justify-center.items-center.ml-2
               =link_to image_tag('shopping_cart.png'), root_path
+          li.h-full.align-middle.flex.justify-center.items-center.ml-2
+            span.bg-gray-200.rounded-full.w-6/12.text-black = current_customer.first_name[0] + " " + current_customer.last_name[0]
         - else 
           li.h-full.align-middle
             =link_to "sign up", new_customer_registration_path, class: 'flex justify-center items-center h-full text-white hover:text-black hover:bg-gray-200 transition-colors'
