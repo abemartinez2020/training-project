@@ -1,0 +1,33 @@
+<div class="text-center">
+    <h1 class="mt-10 mb-5 text-2xl mb-7"><%= "Welcome, #{current_customer.first_name}! "%></h1>
+    <div class=" py-8 px-5  form-container bg-gray-200 w-9/12 mx-auto text-center">
+    <h2 class="mb-5 text-2xl mb-7">Please complete your Profile.</h2>
+
+    <div class="w-7/12 mx-auto">
+    <%= form_with model: @profile do |f| %>
+      <div class="field mb-5">
+        <%= f.label :phone_number %>
+        <%= f.number_field :title %>
+      </div>
+
+      <div class="field mb-5">
+        <%= f.label :gender %>
+        <%= f.text_field :gender %>
+      </div>
+
+        <div>
+        <%= f.label :age %>
+        <%= f.number_field :age %>
+      </div>
+
+      <div>
+      <%= f.submit "Sign up", class: "py-2 px-1 mb-11 bg-black hover:bg-gray-800 w-3/12 text-white cursor-pointer mt-5" %>
+      </div>
+
+    </div>
+    <% end %>
+    </div>
+
+    </div>
+
+</div>
