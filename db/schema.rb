@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_035011) do
+ActiveRecord::Schema.define(version: 2021_10_15_140654) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 2021_10_12_035011) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -28,6 +33,14 @@ ActiveRecord::Schema.define(version: 2021_10_12_035011) do
     t.string "last_name"
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "phone_number"
+    t.string "gender"
+    t.integer "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
