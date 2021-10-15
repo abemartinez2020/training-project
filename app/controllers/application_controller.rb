@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    if resource.sign_in_count == 1
-      profiles_new_path
+    if resource.sign_in_count == 2
+      new_profile_path
     else
       root_path
     end
