@@ -7,17 +7,26 @@
     <%= form_with model: @profile do |f| %>
       <div class="field mb-5">
         <%= f.label :phone_number %>
-        <%= f.number_field :title %>
+        <%= f.number_field :phone_number %>
+        <% @profile.errors.full_messages_for(:phone_number).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
       </div>
 
       <div class="field mb-5">
         <%= f.label :gender %>
         <%= f.text_field :gender %>
+        <% @profile.errors.full_messages_for(:gender).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
       </div>
 
         <div>
         <%= f.label :age %>
         <%= f.number_field :age %>
+        <% @profile.errors.full_messages_for(:age).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
       </div>
 
       <div>
