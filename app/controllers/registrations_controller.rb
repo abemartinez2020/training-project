@@ -5,4 +5,10 @@ class RegistrationsController < Devise::RegistrationsController
     new_customer_confirmation_path
   end
   
+  
+  private
+    def customers_params
+      params.require(:customer).permit(:password_confirmation)
+    end
+
 end
