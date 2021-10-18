@@ -1,7 +1,7 @@
 <div class="text-center">
-    <h1 class="mt-10 mb-5 text-2xl mb-7"><%= "Welcome, #{current_customer.first_name}!" %></h1>
+    <h1 class="mt-10 mb-5 text-2xl mb-7"><%= current_customer.first_name %></h1>
     <div class=" py-8 px-5  form-container bg-gray-200 w-9/12 mx-auto text-center">
-      <h2 class="mb-5 text-2xl mb-7">Please complete your Profile.</h2>
+      <h2 class="mb-5 text-2xl mb-7">Please update your Profile.</h2>
 
       <%= render "form", profile: @profile %>
 

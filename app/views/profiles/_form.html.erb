@@ -1,0 +1,33 @@
+<div class="w-7/12 mx-auto">
+    <%= form_with model: profile do |f| %>
+
+      <div class="field mb-5">
+        <%= f.label :phone_number %>
+        <%= f.number_field :phone_number, class: "py-1 px-2" %>
+        <% profile.errors.full_messages_for(:phone_number).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="field mb-5">
+          <%= f.label :gender %>
+          <%= f.text_field :gender,class: "py-1 px-2" %>
+          <% profile.errors.full_messages_for(:gender).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+      </div>
+
+        <div>
+          <%= f.label :age %>
+          <%= f.number_field :age, class: "py-1 px-2" %>
+          <% profile.errors.full_messages_for(:age).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+      </div>
+
+      <div>
+        <%= f.submit  class: "py-2 px-1 mb-11 bg-black hover:bg-gray-800 w-3/12 text-white cursor-pointer mt-5" %>
+      </div>
+
+    <% end %>
+</div>

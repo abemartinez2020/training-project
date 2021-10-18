@@ -13,6 +13,20 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+      @profile = Profile.find(params[:id])
+
+      if @profile.update(profile_params)
+        redirect_to @root_path
+      else
+        redirect_to :edit
+      end
+    end
+
   private
   def profile_params
       params.require(:profile).permit(:phone_number, :gender, :age)
