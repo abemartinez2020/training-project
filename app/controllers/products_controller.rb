@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def show
-      @products = Profile.all
+      @products = Product.all
   end
 end
 
