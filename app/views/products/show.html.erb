@@ -1,18 +1,19 @@
-<h1>Exclusive Clothing for The Refined</h1>
+<h1 class="mt-10 mb-5 text-2xl mb-7">Exclusive Clothing for The Refined</h1>
 
-<div class="filter">
-  <p>Item Search</p>
-  <span>Category Filter</span>
-</div>
+<div class="catalog-container py-8 px-5  form-container bg-gray-200 w-9/12 mx-auto text-center"
 
-<div class="catalog-container flex flex-wrap justify-start items-stretch gap-x-2.5 gap-y-2.5  w-10/12 mx-auto my-7"
+  <h2>Item Search</h2>
+  <h2>Category Filter</h2>
+  <%=select_tag(:phone_type, options_for_select(["Select One", "shirts", "pants", "socks"],:include_blank ["Select Category"])) %>
+
 
       <!-- product cards with add button -->
-
-      <% @products.each do |product| %>
-          <div class="product-card w-3/12 bg-white">
+    <div class=" flex flex-wrap justify-start items-stretch gap-x-2.5 gap-y-2.5  w-11/12 mx-auto my-7">
+        <% @products.each do |product| %>
+          <div class="product-card flex flex-col items-stretch justify-between w-3/12 bg-white border-solid border-2 border-light-blue-200">
             <%=image_tag('product_images/' + product.image, class:"w-full")%>
-            <div class="product-card_text w-full bg-gray-200 p-3">  
+            
+            <div class="product-card_text w-full bg-gray-100 p-3">  
               <h3><%= product.name %></h3>
                 <h6><strong>$<%= product.price %></strong></h6>
                 <p><%= product.description %></p>
@@ -20,6 +21,9 @@
                 <p class="bg-blue-400 text-center text-white text-lg mt-2">+</p>
                 <!--<%= button_to "+", class:"bg-blue-200" %>-->
               </div>
+              
           </div>
         <% end %>
+    </div>
+
 </div>
