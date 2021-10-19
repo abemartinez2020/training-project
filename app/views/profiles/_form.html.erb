@@ -11,7 +11,7 @@
 
       <div class="field mb-5">
           <%= f.label :gender %>
-          <%= f.text_field :gender,class: "py-1 px-2" %>
+          <%= f.select :gender, options_for_select(["Select One", "male", "female", "other"],:include_blank ["Select One"]), class: "py-1 px-2" %>
           <% profile.errors.full_messages_for(:gender).each do |message| %>
             <div><%= message %></div>
           <% end %>
