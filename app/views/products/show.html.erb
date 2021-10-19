@@ -1,7 +1,12 @@
 <h1>Exclusive Clothing for The Refined</h1>
 <div class="filter">
   #product cards with add button
-  
+  <% @products.each do |product| %?
+    <div>
+      <h3><%= product.name %></h3>
+      <h6><%= product.price %></h6>
+      <p><%= product.description %></p>
+      <p><%= "available: #{product.unit_stock}" %></p>
   name
   price
   description
