@@ -10,7 +10,7 @@
       <!-- product cards with add button -->
     <div class=" flex flex-wrap justify-start items-stretch gap-x-2.5 gap-y-2.5  w-11/12 mx-auto my-7">
         <% @products.each do |product| %>
-          <div class="product-card flex flex-col items-stretch justify-between w-3/12 bg-white border-solid border-2 border-light-blue-200">
+          <div class="product-card flex flex-col items-stretch justify-between w-3/12 bg-white border-solid border-2 border-blue-100">
             <%=image_tag('product_images/' + product.image, class:"w-full")%>
             
             <div class="product-card_text w-full bg-gray-100 p-3">  
