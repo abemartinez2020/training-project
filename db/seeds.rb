@@ -32,4 +32,11 @@ price: 3.70,
 description: "Skin wont show with these heavy-duty dress socks.",
 unit_stock: 9,
 image: "socks1.jpg"},
+{  name: "Short black Socks",
+price: 3.70,
+description: " Comfortable socks.",
+unit_stock: 2,
+image: "socks2.jpg"}
 ])
+
+categories = Category.create([{category_name:"shirts"}, {category_name:"pants"}, {category_name:"socks"}])

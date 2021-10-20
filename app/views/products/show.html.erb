@@ -4,6 +4,8 @@
 
   <h2>Item Search</h2>
   <h2>Category Filter</h2>
+
+
   <%=select_tag(:phone_type, options_for_select(["Select One", "shirts", "pants", "socks"],:include_blank ["Select Category"])) %>
 
 
@@ -27,3 +29,7 @@
     </div>
 
 </div>
+
+#form_with(category) do |f|%>
+   # f.select :id,  @categories.map{ |c| [c.name, c.id],}
+#end%>
